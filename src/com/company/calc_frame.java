@@ -93,7 +93,7 @@ public class calc_frame extends javax.swing.JFrame {
         });
 
         div.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        div.setText("÷");
+        div.setText("/");
         div.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 divActionPerformed(evt);
@@ -143,7 +143,7 @@ public class calc_frame extends javax.swing.JFrame {
         });
 
         multi.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        multi.setText("x");
+        multi.setText("*");
         multi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 multiActionPerformed(evt);
@@ -333,6 +333,8 @@ public class calc_frame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>
 
+
+
     private void num1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         scr_val += num1.getText();
@@ -394,55 +396,82 @@ public class calc_frame extends javax.swing.JFrame {
 
     private void commaActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        scr_val += comma.getText();
-        monitor.setText(scr_val);
+
+        if(scr_val.matches(".*[123456789]"))
+        {
+            scr_val += comma.getText();
+            monitor.setText(scr_val);
+        }
 
     }
 
 
     private void percentActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        scr_val += " " + percent.getText() + " ";
-        monitor.setText(scr_val);
+
+
+        if(scr_val.matches(".*[123456789]"))
+        {
+            scr_val += " " + percent.getText() + " ";
+            monitor.setText(scr_val);
+        }
     }
 
 
     private void divActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        scr_val += " " + div.getText() + " ";
-        monitor.setText(scr_val);
+        if(scr_val.matches(".*[123456789]"))
+        {
+            scr_val += " " + div.getText() + " ";
+            monitor.setText(scr_val);
+        }
     }
 
 
     private void multiActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        scr_val += " " + multi.getText() + " ";
-        monitor.setText(scr_val);
+        if(scr_val.matches(".*[123456789]"))
+        {
+            scr_val += " " + multi.getText() + " ";
+            monitor.setText(scr_val);
+        }
     }
 
 
     private void minusActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        scr_val += " " + minus.getText() + " ";
-        monitor.setText(scr_val);
+        if(scr_val.matches(".*[123456789]"))
+        {
+            scr_val += " " + minus.getText() + " ";
+            monitor.setText(scr_val);
+        }
     }
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        scr_val += " " + add.getText() + " ";
-        monitor.setText(scr_val);
+        if(scr_val.matches(".*[123456789]"))
+        {
+            scr_val += " " + add.getText() + " ";
+            monitor.setText(scr_val);
+        }
     }
 
     private void left_bracketActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        scr_val += " " + left_bracket.getText() + " ";
-        monitor.setText(scr_val);
+        if(scr_val.matches(".*[123456789]"))
+        {
+            scr_val += " " + left_bracket.getText() + " ";
+            monitor.setText(scr_val);
+        }
     }
 
     private void right_bracketActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        scr_val += " " + right_bracket.getText() + " ";
-        monitor.setText(scr_val);
+        if(scr_val.matches(".*[123456789]"))
+        {
+            scr_val += " " + right_bracket.getText() + " ";
+            monitor.setText(scr_val);
+        }
     }
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {
@@ -457,7 +486,8 @@ public class calc_frame extends javax.swing.JFrame {
 
     private void clearallActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-
+        scr_val = "";
+        monitor.setText(scr_val);
     }
 
 

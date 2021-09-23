@@ -8,7 +8,11 @@ import java.util.Stack;
 public class Main {
 
     public static void evaluateAndPrintResult(String s) {
+        String starts = "( ";
+        String ends = " )";
+        s = starts + s + ends;
         String[] str = s.split("\\s+");
+
         Queue<String> q = new LinkedList<>();
         q.addAll(Arrays.asList(str));
         Stack<String> ops = new Stack<>();
@@ -72,6 +76,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-        evaluateAndPrintResult("( ( 1 + 2 ) * 3 )");
+        evaluateAndPrintResult(" ( 1 + 2 ) * 3 ");
     }
 }
